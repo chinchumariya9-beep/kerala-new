@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Kerala: A Slow-Paced Family Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #9e7943;
+            --text-color: #4a4a4a;
+            --bg-color: #f9f9f9;
+            --border-color: #eaeaea;
+            --premium-gold: #c3922e; /* Premium Golden Color */
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 60px 80px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 4px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            max-width: 220px;
+            margin-bottom: 25px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: var(--accent-color);
+            font-style: italic;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .intro-text {
+            font-size: 15px;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        .route-box {
+            background-color: #fdfaf6;
+            padding: 15px 20px;
+            border-left: 4px solid var(--accent-color);
+            margin-bottom: 30px;
+            font-size: 15px;
+        }
+
+        .overview-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        /* Options Explanation - Styled exactly like the provided screenshot */
+        .options-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 35px;
+            margin-bottom: 40px;
+        }
+        .opt-card {
+            padding: 30px;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+        .opt-card h4 {
+            margin-top: 0;
+            color: var(--premium-gold);
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .opt-card p {
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 0;
+            color: var(--text-color);
+        }
+
+        /* Day-by-Day Itinerary */
+        .day-block {
+            margin-bottom: 40px;
+            padding: 25px;
+            background-color: #fafafa;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .day-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .day-title span {
+            color: var(--accent-color);
+            margin-right: 10px;
+        }
+
+        .day-desc {
+            font-size: 14px;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .overnight {
+            font-size: 13px;
+            font-weight: 500;
+            font-style: italic;
+            color: var(--accent-color);
+        }
+
+        /* Flexible Image Gallery for each day */
+        .day-images-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .day-images-gallery img {
+            flex: 1 1 200px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+            background-color: #eeeeee; /* Placeholder background color */
+        }
+
+        /* Tables */
+        .hotel-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .hotel-table th, .hotel-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hotel-table th {
+            background-color: #f4f4f4;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .hotel-table a {
+            color: var(--premium-gold); /* Premium Golden Color for links */
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .hotel-table a:hover {
+            color: #a57820;
+            text-decoration: underline;
+        }
+
+        .price-section {
+            background-color: #fdfaf6;
+            border: 1px solid #f2e6d6;
+            padding: 30px;
+            margin-top: 40px;
+            border-radius: 6px;
+        }
+
+        .price-box {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+        
+        .price-amount {
+            font-size: 26px;
+            color: var(--accent-color);
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 10px;
+        }
+
+        /* Lists for inclusions/exclusions/terms */
+        .content-list {
+            padding-left: 20px;
+            font-size: 14px;
+        }
+        .content-list li {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+        .content-list li strong {
+            color: var(--primary-color);
+        }
+        
+        .sub-list {
+            padding-left: 20px;
+            margin-top: 8px;
+            list-style-type: circle;
+        }
+
+        /* Personal Touch & Footer */
+        .personal-touch {
+            background-color: #fafafa;
+            padding: 30px;
+            margin-top: 50px;
+            border-radius: 8px;
+            text-align: center;
+            font-style: italic;
+            font-size: 15px;
+            color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 40px;
+            border-top: 1px solid var(--border-color);
+            font-size: 13px;
+            color: #777;
+        }
+        footer strong {
+            color: var(--primary-color);
+            font-size: 15px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Print Styles */
+        @media print {
+            body { background-color: #fff; padding: 0; }
+            .container { box-shadow: none; padding: 0; max-width: 100%; }
+            .day-block { page-break-inside: avoid; }
+            .hotel-table, .price-section, .options-box { page-break-inside: avoid; }
+            a { text-decoration: none !important; color: inherit; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <img src="https://lindeavecmathew.com/wp-content/uploads/2026/02/Mvlogo-web.jpg" alt="Mathew Voyages Logo" class="logo">
+        <h1>Classic Kerala</h1>
+        <div class="subtitle">A Slow-Paced Family Journey (15 Days / 14 Nights)</div>
+    </header>
+
+    <img src="anantha-krishnan-zMfvtg7jfuc-unsplash.jpg" alt="Kerala Kathakali" class="overview-img">
+
+    <section>
+        <div class="route-box">
+            <strong>Travel Route:</strong> Cochin - Munnar - Periyar - Kumarakom - Alleppey - Mararikulam / Wayanad - Thrissur - Cochin
+        </div>
+
+        <h2>Tour Overview</h2>
+        <p class="intro-text">
+            Crafted specifically for your family, this journey through Kerala is designed around a simple philosophy: taking the time to truly experience a destination. Moving at a relaxed, family-friendly pace with minimal hotel changes, this itinerary allows you to absorb the beauty of South India without the rush of everyday packing.
+        </p>
+        <p class="intro-text">
+            The first part of your journey explores the classic essence of Kerala. You will step back in time in the historic port town of Fort Kochi, breathe in the crisp air of Munnar’s endless tea estates, discover the fragrant spice gardens of Periyar, and unwind by the tranquil Vembanad Lake in Kumarakom. This shared core experience is beautifully highlighted by a magical overnight cruise through the backwaters aboard a private, traditional luxury houseboat.
+        </p>
+        <p class="intro-text">
+            To complete your Keralan adventure, we have designed two distinct paths for the second half of your holiday:
+        </p>
+        
+        <div class="options-box">
+            <div class="opt-card">
+                <h4>Option A: Classic Beach Conclusion</h4>
+                <p>Concludes your holiday with 5 nights of uninterrupted relaxation by the sea at Marari Beach. Perfect for a completely slow-paced end to your trip.</p>
+            </div>
+            <div class="opt-card">
+                <h4>Option B: Wildlife & Culture</h4>
+                <p>Replaces the beach stay with a journey into the lush forests of Wayanad for an adventurous wildlife experience, ending with a cultural stop in Arattupuzha.</p>
+            </div>
+        </div>
+
+        <p class="intro-text">
+            Throughout both options, your accommodations have been handpicked from prestigious hospitality groups and elite boutique retreats (such as the renowned CGH Earth properties). These high-end luxury charm hotels ensure that whether you are sleeping in a Victorian shipyard, a mountain planter's bungalow, or a heritage backwater mansion, your family will experience authentic character, exceptional comfort, and flawless service.
+        </p>
+    </section>
+
+    <section>
+        <h2>Detailed Program</h2>
+
+        <div class="day-block">
+            <h3 class="day-title"><span>Day 1</span> 24 December 2026 | Arrival in Cochin</h3>
+            <p class="day-desc">Your arrival in Kerala marks the beginning of a journey through one of South India’s most distinctive regions, where tropical landscapes, centuries-old traditions, and a rich maritime history seamlessly intertwine. From your very first moments, the atmosphere feels wonderfully different. The lush greenery, the warm coastal breeze, and a noticeably slower rhythm of life gently introduce you to the soulful character of the state. Upon arrival at Cochin International Airport, your family will be warmly welcomed and chauffeured to your heritage hotel in Cochin. The afternoon is deliberately left open—an invitation to settle in, recover from your long journey, and tune into Kerala's laid-back frequency. In the early evening, you will be introduced to Kerala’s artistic soul through a traditional Kathakali performance. More than just a dance, this highly expressive classical theatre brings ancient epics to life through elaborate costumes, precise hand gestures, and striking facial expressions. By arriving early, you will have the rare privilege of watching the artists meticulously apply their intricate make-up—a mesmerizing process that reveals the patience, discipline, and symbolism behind this centuries-old art form. Return to your hotel for a peaceful first night in India.</p>
+            <div class="overnight">Overnight in Cochin.</div>
+            
+            <div class="day-images-gallery">
+                <img src="IMAGE_LINK_1_HERE" alt="Kochi Image 1">
+                <img src="IMAGE_LINK_2_HERE" alt="Kochi Image 2">
+            </div>
+        </div>
+
+        <div class="day-block">
+            <h3 class="day-title"><span>Day 2</span> 25 December 2026 | Cochin</h3>
+            <p class="day-desc">After breakfast, the day is dedicated to uncovering the historic quarters of Mattancherry and Fort Kochi, two vibrant neighbourhoods that beautifully reflect Cochin’s long-standing connection with global traders and explorers. The morning begins in Mattancherry, once the beating heart of the global spice trade. Walking through its lively streets past old warehouses and traditional merchant houses, you can almost smell the history of a time when pepper, cardamom, and cinnamon were shipped to distant shores. You will visit the Mattancherry Palace (the Dutch Palace), whose simple exterior hides breathtakingly beautiful murals depicting scenes from Indian mythology. Continue through the narrow lanes of the old Jewish Quarter, lined with antique shops and historic buildings, leading to the Paradesi Synagogue—a profound reminder of the Jewish community that thrived here for centuries. Later, as you transition into Fort Kochi, the architectural character shifts to colonial-era houses, magnificent churches, and shaded avenues. Visit St. Francis Church, India's oldest European church and the original resting place of Vasco da Gama. The walk naturally concludes at the waterfront, where the iconic Chinese fishing nets are silhouetted against the sky. Take your time to stroll along the shore, watch the fishermen at work, and soak in the everyday magic of Fort Kochi.</p>
+            <div class="overnight">Overnight in Cochin.</div>
+            
+            <div class="day-images-gallery">
+                <img src="IMAGE_LINK_1_HERE" alt="Cochin Sightseeing 1">
+                <img src="IMAGE_LINK_2_HERE" alt="Cochin Sightseeing 2">
+                <img src="IMAGE_LINK_3_HERE" alt="Cochin Sightseeing 3">
+            </div>
+        </div>
+
+        <div class="day-block">
+            <h3 class="day-title"><span>Day 3</span> 26 December 2026 | Cochin to Munnar</h3>
+            <p class="day-desc">After breakfast, leave the warm coastal plains behind as you embark on a scenic ascent into the Western Ghats. As the winding roads gradually climb higher, the landscape undergoes a magical transformation. Coconut groves and bustling lowland villages slowly give way to dense forests, sparkling mountain streams, and noticeably cooler air. The journey itself is an integral part of the experience, offering a gentle introduction to Kerala’s emerald highlands. Munnar is renowned for its vast, rolling tea plantations, soft mountain light, and deeply peaceful valleys. The hills are carpeted with meticulously planted tea bushes that stretch across the slopes in mesmerizing geometric patterns, creating one of the most distinctive and photographed landscapes in all of South India. Upon arrival, check into your high-end mountain retreat. The remainder of the day is deliberately kept at leisure. You can relax at the hotel, take a gentle walk through the surrounding greenery, or simply appreciate the quiet mountain atmosphere as the light softens over the tea estates.</p>
+            <div class="overnight">Overnight in Munnar.</div>
+            
+            <div class="day-images-gallery">
+                <img src="IMAGE_LINK_1_HERE" alt="Munnar Journey 1">
+                <img src="IMAGE_LINK_2_HERE" alt="Munnar Journey 2">
+            </div>
+        </div>
+
+        <div class="day-block">
+            <h3 class="day-title"><span>Day 4</span> 27 December 2026 | Munnar</h3>
+            <p class="day-desc">Set out after breakfast to discover the breathtaking landscapes that make Munnar so extraordinary. Begin with a leisurely drive through the tea-covered hills, where the winding roads, crisp mountain air, and shifting valley views create a serene backdrop for the day. You will spend time exploring a working tea plantation, walking among the neatly trimmed bushes and learning how this single plant has shaped the history, economy, and everyday life of the region. Continue with a visit to a local tea factory and museum, where the fascinating journey of tea—from the young, freshly plucked leaves on the hillside to the aromatic cup enjoyed worldwide—comes to life. Later, embark on a scenic drive through the surrounding high ranges, pausing at panoramic viewpoints to simply breathe in the wide valleys and the peaceful rhythm of the countryside. The afternoon is kept relaxed, allowing your family to return to the hotel and enjoy the property at an unhurried pace. As evening approaches, the cool mountain air invites you to simply slow down and enjoy the stillness.</p>
+            <div class="overnight">Overnight in Munnar.</div>
+            
+            <div class="day-images-gallery">
+                <img src="IMAGE_LINK_1_HERE" alt="Munnar Tea Estates">
+                <img src="IMAGE_LINK_2_HERE" alt="Munnar Landscape">
+            </div>
+        </div>
+
+        <div class="day-block">
+            <h3 class="day-title"><span>Day 5</span> 28 December 2026 | Munnar to Periyar</h3>
+            <p class="day-desc">After breakfast, you will leave behind the mist-covered tea hills of Munnar and journey toward the spice-scented highlands of Periyar. The drive through the mountains is spectacular; the landscape slowly transitions from the manicured green of tea estates to thicker, wilder forests and fertile spice-growing valleys. Along the way, glimpses of small agricultural settlements and cultivated hillsides reveal the rich, earth-connected life of Kerala’s highlands. As you draw closer to Periyar, the air becomes warmer and infused with the fragrance of the tropics. Pepper vines cling to tall shade trees, and cardamom bushes blanket the forest floor. Upon arrival, check into your nature retreat and take some time to relax. In the afternoon, enjoy a guided walking tour through a local spice plantation. It is a wonderfully tactile experience for the children to discover how everyday spices—cardamom, cinnamon, cloves, and pepper—grow in their natural environment. In the evening, witness a thrilling performance of Kalaripayattu, Kerala’s ancient martial art. The breathtaking display of agility, powerful movements, and traditional weaponry perfectly reflects centuries of discipline.</p>
+            <div class="overnight">Overnight in Periyar.</div>
+            
+            <div class="day-images-gallery">
+                <img src="IMAGE_LINK_1_HERE" alt="Periyar Arrival">
+                <img src="IMAGE_LINK_2_HERE" alt="Spice Plantation">
+            </div>
+        </div>
+
+        <div class="day-block">
+            <h3 class="day-title"><span>Day 6</span> 29 December 2026 | Periyar</h3>
+            <p class="day-desc">Awaken to the fresh, crisp air of the Western Ghats. Your day begins with a guided nature walk through the lush forested fringes of Periyar. Accompanied by a local naturalist, you will follow quiet, shaded trails, learning to identify endemic plants, towering trees, exotic birds, and the subtle tracks of native wildlife. This walk is not about rushing to check animals off a list, but rather about slowing down, listening to the forest, and feeling connected to the rich ecosystem. Later, enjoy a peaceful boat ride across the tranquil waters of Periyar Lake. As the boat glides past the partially submerged tree trunks that define Periyar’s unique landscape, keep watch along the forested shores for wild elephants, bison, and diverse birdlife. After some time to relax back at the hotel, the adventure continues with a rugged jeep ride through the surrounding countryside. This drive takes you off the beaten path, through plantation edges and quiet mountain settlements, offering sweeping panoramic views and a beautifully raw perspective of life in the highlands.</p>
+            <div class="overnight">Overnight in Periyar.</div>
+            
+            <div class="day-images-gallery">
+                <img src="IMAGE_LINK_1_HERE" alt="Periyar Tour">
+                <img src="IMAGE_LINK_2_HERE" alt="Jeep Safari">
+            </div>
+        </div>
+
+        <div class="day-block">
+            <h3 class="day-title"><span>Day 7</span> 30 December 2026 | Periyar to Kumarakom</h3>
+            <p class="day-desc">Following breakfast, you will begin your gradual descent from the forested highlands toward Kerala’s legendary, peaceful backwaters. The transition in the landscape is captivating—winding mountain roads and dense spice gardens slowly yield to flat, emerald-green paddy fields, swaying coconut groves, and a labyrinth of narrow waterways. You will arrive in Kumarakom, a tranquil village scattered beautifully along the banks of the vast Vembanad Lake. Life here follows an unhurried, gentle rhythm, offering a profound contrast to the mountain days behind you. Check into your luxury backwater resort and take the afternoon to settle into this new watery world. Enjoy a gentle walk around the property, watching the traditional wooden boats glide across the lake and the local fishermen returning with their daily catch. As the evening approaches, the sky over the lake transforms into a canvas of brilliant colours.</p>
+            <div class="overnight">Overnight in Kumarakom.</div>
+            
+            <div class="day-images-gallery">
+                <img src="IMAGE_LINK_1_HERE" alt="Kumarakom Backwaters">
+                <img src="IMAGE_LINK_2_HERE" alt="Village Boats">
+            </div>
+        </div>
+
+        <div class="day-block">
+            <h3 class="day-title"><span>Day 8</span> 31 December 2026 | Kumarakom</h3>
+            <p class="day-desc">Enjoy a deeply relaxed morning in Kumarakom, discovering the quiet beauty of rural life at your own pace. Take a leisurely walk through the nearby village surroundings, where traditional homes, small canals, and endless green paddy fields offer an authentic glimpse into everyday life in the backwaters. Observe the natural, gentle unfolding of the day—villagers going about their routines, children playing near the water, and small canoes navigating the shaded canals. Return to the resort to spend the rest of the day in pure relaxation. You have ample time to enjoy the luxurious hotel facilities, listen to the water lapping against the shore, and appreciate the uninterrupted views of the lake. As the afternoon light softens, the banks of Vembanad Lake provide the perfect, tranquil setting to watch the final sunset of the year. With it being New Year’s Eve, the evening is completely yours to enjoy the festive yet peaceful atmosphere of your resort as you welcome 2027.</p>
+            <div class="overnight">Overnight in Kumarakom.</div>
+            
+            <div class="day-images-gallery">
+                <img src="IMAGE_LINK_1_HERE" alt="Vembanad Lake Views">
+                <img src="IMAGE_LINK_2_HERE" alt="Kumarakom Relaxation">
+            </div>
+        </div>
+
+        <div class="day-block">
+            <h3 class="day-title"><span>Day 9</span> 01 January 2027 | Kumarakom to Alleppey</h3>
+            <p class="day-desc">Begin the New Year with a short journey to Alleppey, the heart of the backwaters, where Kerala reveals its most intimate and iconic landscapes. Alleppey is a world entirely shaped by water, where wide lagoons and narrow, palm-fringed canals form the lifeblood of the community. Upon arrival, you will board your private, beautifully crafted traditional Kerala houseboat. Originally used to transport rice and spices, these luxurious floating villas offer the ultimate vantage point to experience backwater life. As your crew navigates the calm waters, the scenery shifts continuously. You will pass fishermen casting their nets, children waving from the banks, and traditional homes nestled beneath the palms. Beyond the canals, vast expanses of vibrant green rice paddies stretch out below sea level. A delicious, freshly prepared lunch featuring local Keralan flavours is served on board. The afternoon is spent cruising effortlessly, allowing you to simply sit back and watch the rural world drift by. As night falls, the boat moors in a quiet, secluded spot. The stillness of the water and the distant sounds of the village create an unforgettable atmosphere for a night on the water.</p>
+            <div class="overnight">Lunch & Dinner on board. Overnight on the Houseboat.</div>
+            
+            <div class="day-images-gallery">
+                <img src="IMAGE_LINK_1_HERE" alt="Houseboat Cruise">
+                <img src="IMAGE_LINK_2_HERE" alt="Backwater Scenery">
+            </div>
+        </div>
+
+        <!-- OPTIONS SPLIT -->
+        <h2 style="color:var(--accent-color); margin-top:60px; font-size: 22px;">▶ OPTION A: Classic Beach Conclusion (Mararikulam)</h2>
+
+        <div class="day-block">
+            <h3 class="day-title"><span>Day 10</span> 02 January 2027 | Alleppey to Mararikulam</h3>
+            <p class="day-desc">Wake up to the gentle sounds of the backwaters and enjoy breakfast on the deck as the morning mist lifts off the water. After disembarking from your houseboat, a short drive takes you to Mararikulam, a quiet and pristine fishing village on the shores of the Arabian Sea. After your enriching journey through historic cities, misty mountains, wild forests, and winding backwaters, your arrival in Mararikulam marks a beautiful, gentle change of pace. Here, swaying coconut palms, quiet sandy lanes, and an endless stretch of beach invite you to completely slow down. Check into your beach resort and spend the rest of the day at absolute leisure. Walk barefoot along the shoreline, listen to the rhythmic crashing of the waves, and as the day ends, witness a spectacular sunset over the Arabian Sea.</p>
+            <div class="overnight">Overnight in Mararikulam.</div>
+            
+            <div class="day-images-gallery">
+                <img src="IMAGE_LINK_1_HERE" alt="Marari Coast Arrival">
+                <img src="IMAGE_LINK_2_HERE" alt="Resort Setting">
+            </div>
+        </div>
+
+        <div class="day-block">
+            <h3 class="day-title"><span>Day 11</span> 03 January 2027 | Mararikulam</h3>
+            <p class="day-desc">Awaken to a day of complete coastal surrender. Mararikulam is untouched by the rush of typical tourist beaches; its atmosphere is remarkably calm, natural, and deeply rooted in the traditions of the local fishing community. Spend your morning on the pristine sands, letting the children play by the water while you relax beneath the shade of coconut palms. In the early hours, you can often see the local fishermen returning to shore with their wooden boats, a practice that has remained unchanged for generations. The entire day is yours to script—whether that means swimming in the resort pool, reading a book by the sea, or taking a slow afternoon nap. The luxury here is found in the simplicity of the environment and the total absence of a schedule.</p>
+            <div class="overnight">Overnight in Mararikulam.</div>
+            
+            <div class="day-images-gallery">
+                <img src="IMAGE_LINK_1_HERE" alt="Marari Leisure">
+                <img src="IMAGE_LINK_2_HERE" alt="Tropical Beach">
+            </div>
+        </div>
+
+        <div class="day-block">
+            <h3 class="day-title"><span>Day 12</span> 04 January 2027 | Mararikulam</h3>
+            <p class="day-desc">Following a relaxed breakfast, step slightly beyond the beach to discover the gentle village atmosphere that gives Mararikulam its distinct charm. Wander through quiet, sandy lanes that wind between dense coconut groves, small vegetable gardens, and traditional homes. This is not a day for structured sightseeing, but rather an opportunity to observe the poetic, everyday rhythm of coastal Kerala. You will see fishermen mending their nets, bicycles rolling quietly along the paths, and daily life moving at a wonderfully slow pace. It is a brilliant way for the family to connect with the local culture in a completely unforced manner. Return to the resort for another idyllic afternoon of leisure, culminating in another warm, colourful sunset over the water.</p>
+            <div class="overnight">Overnight in Mararikulam.</div>
+            
+            <div class="day-images-gallery">
+                <img src="IMAGE_LINK_1_HERE" alt="Village Vibe">
+                <img src="IMAGE_LINK_2_HERE" alt="Sunset Marari">
+            </div>
+        </div>
+
+        <div class="day-block">
+            <h3 class="day-title"><span>Day 13</span> 05 January 2027 | Mararikulam</h3>
+            <p class="day-desc">Your luxury resort is deeply integrated into the Mararikulam experience, designed to echo the charm and ecological harmony of a traditional Keralan coastal village. Today is all about enjoying the property's lush environment. Take a morning stroll through the leafy grounds, explore the vibrant butterfly garden, or visit the resort's organic farm to see where your fresh meals are sourced. Find a quiet hammock beneath the palms or spend a few hours floating in the swimming pool. After the diverse landscapes and immersive experiences of the past two weeks, today offers the profound luxury of time—time to reflect, time to reconnect as a family, and time to simply enjoy the silence and space of nature.</p>
+            <div class="overnight">Overnight in Mararikulam.</div>
+            
+            <div class="day-images-gallery">
+                <img src="IMAGE_LINK_1_HERE" alt="Hammock Relaxation">
+            </div>
+        </div>
+
+        <div class="day-block">
+            <h3 class="day-title"><span>Day 14</span> 06 January 2027 | Mararikulam</h3>
+            <p class="day-desc">Enjoy your final full day on the sun-drenched Kerala coast. With absolutely nothing on the agenda, you have one last opportunity to embrace the beach, the warm tropical sea breeze, and the incredibly relaxed rhythm of Mararikulam. Collect seashells with the children, enjoy a long farewell walk along the water's edge, or simply sit back and let the peacefulness of the Arabian Sea wash over you. As the sun begins its final descent, painting the sky in brilliant hues of orange and purple, gather together to enjoy the calm and beautiful conclusion to your grand Keralan adventure.</p>
+            <div class="overnight">Overnight in Mararikulam.</div>
+            
+            <div class="day-images-gallery">
+                <img src="IMAGE_LINK_1_HERE" alt="Beach Final Day">
+                <img src="IMAGE_LINK_2_HERE" alt="Sea Breeze">
+            </div>
+        </div>
+
+        <div class="day-block">
+            <h3 class="day-title"><span>Day 15</span> 07 January 2027 | Mararikulam to Cochin International Airport</h3>
+            <p class="day-desc">Enjoy your final Keralan breakfast and the last few moments of coastal serenity. Depending on your flight schedule, check out of your resort and meet your private chauffeur for the comfortable transfer back to Cochin International Airport. As you leave Kerala, you carry with you a tapestry of beautiful memories—from the mist-shrouded spice hills and the mirror-like backwaters to the quiet, sandy shores and the enduring warmth of the people you met along the way. Have a safe flight back home!</p>
+            
+            <div class="day-images-gallery">
+                <img src="IMAGE_LINK_1_HERE" alt="Flight Departure">
+            </div>
+        </div>
+
+        <h2 style="color:var(--accent-color); margin-top:60px; font-size: 22px;">▶ OPTION B: Wildlife & Culture Conclusion (Wayanad & Arattupuzha)</h2>
+
+        <div class="day-block">
+            <h3 class="day-title"><span>Day 10</span> 02 January 2027 | Alleppey – Kozhikode (by Train) – Wayanad</h3>
+            <p class="day-desc">After a final, peaceful breakfast on the gentle waters of Alleppey, you will disembark your houseboat and begin your journey towards the untamed beauty of northern Kerala. You will board a scenic day train from Alleppey to Kozhikode. This train journey is a fantastic, authentic experience for the family, offering a rolling window into everyday Kerala as you pass by endless coconut groves, bustling towns, and vibrant green countryside. Upon arrival in Kozhikode, your private chauffeur will meet you for the drive up into the Western Ghats. With each hairpin bend, the air turns cooler and the landscape more dramatic, revealing dense forests and sprawling coffee plantations. You will check into Tranquil Resort, a stunning retreat hidden deep within a private coffee and spice estate. The evening is yours to settle into the calm surroundings, breathing in the fresh mountain air as the sounds of the forest lull you to sleep.</p>
+            <div class="overnight">Overnight in Wayanad.</div>
+            
+            <div class="day-images-gallery">
+                <img src="IMAGE_LINK_1_HERE" alt="Wayanad Arrival">
+                <img src="IMAGE_LINK_2_HERE" alt="Train Journey India">
+            </div>
+        </div>
+
+        <div class="day-block">
+            <h3 class="day-title"><span>Day 11</span> 03 January 2027 | Wayanad</h3>
+            <p class="day-desc">Today is a day of complete surrender to the serene rhythm of the Western Ghats. There is absolutely no need to hurry. Step outside your room, and you are immediately enveloped by nature. A soft canopy of tall tropical trees provides shade over rolling coffee plants and climbing pepper vines. Enjoy a leisurely, guided walk through the private estate. It is a wonderful, unhurried opportunity for the children to learn about coffee cultivation while listening to the diverse birdsong that fills the air. The rest of the day is intentionally left free. Find a peaceful corner with a good book, relax in the beautiful gardens, and simply enjoy the profound silence of being far removed from busy roads and crowded towns.</p>
+            <div class="overnight">Overnight in Wayanad.</div>
+            
+            <div class="day-images-gallery">
+                <img src="IMAGE_LINK_1_HERE" alt="Wayanad Estate Walk">
+                <img src="IMAGE_LINK_2_HERE" alt="Coffee Plantation">
+            </div>
+        </div>
+
+        <div class="day-block">
+            <h3 class="day-title"><span>Day 12</span> 04 January 2027 | Wayanad</h3>
+            <p class="day-desc">After a hearty breakfast, set out towards the Muthanga Wildlife Sanctuary, where the landscape deepens into protected, ancient woodlands. Here, you will embark on an exciting open-jeep safari. As the jeep navigates the rugged forest tracks beneath towering trees, the atmosphere changes wonderfully—the rustling of leaves and distant bird calls signal that you have entered a world where nature sets the rules. Keep a keen eye on the forest edges and clearings. This sanctuary is home to wild elephants, spotted deer, playful monkeys, and a vibrant array of birdlife. The true beauty of Muthanga lies in the immersive experience of the wilderness itself, making every turn of the track a moment of quiet anticipation. After the safari, return to your estate resort to relax and share stories of the day's wildlife encounters.</p>
+            <div class="overnight">Overnight in Wayanad.</div>
+            
+            <div class="day-images-gallery">
+                <img src="IMAGE_LINK_1_HERE" alt="Wildlife Safari">
+                <img src="IMAGE_LINK_2_HERE" alt="Wayanad Forest">
+            </div>
+        </div>
+        
+        <div class="day-block">
+            <h3 class="day-title"><span>Day 13</span> 05 January 2027 | Wayanad</h3>
+            <p class="day-desc">Today, discover a different ecological pocket of the region with a scenic drive to the Tholpetty range of the Wayanad Wildlife Sanctuary. The journey there is beautiful, passing through remote forest corridors and quiet rural settlements. Upon arrival, embark on another thrilling jeep safari. The cool air, the dancing light piercing through the forest canopy, and the rich biodiversity create a magical environment. Since every safari is unique and dictated by nature, the element of surprise makes the experience incredibly engaging for the family. Whether you spot a majestic herd of elephants or simply marvel at the giant trees and colourful birds, it is a deeply rewarding connection with nature. Return to your resort for one final, peaceful evening in the highlands.</p>
+            <div class="overnight">Overnight in Wayanad.</div>
+            
+            <div class="day-images-gallery">
+                <img src="IMAGE_LINK_1_HERE" alt="Tholpetty Woods">
+                <img src="IMAGE_LINK_2_HERE" alt="Nature Observation">
+            </div>
+        </div>
+        
+        <div class="day-block">
+            <h3 class="day-title"><span>Day 14</span> 06 January 2027 | Wayanad – Kozhikode – Train to Thrissur – Arattupuzha</h3>
+            <p class="day-desc">After breakfast, bid farewell to the misty green hills of Wayanad as you drive back down to the coastal city of Kozhikode. Here, you will board a train to Thrissur, the cultural capital of Kerala. This relaxed rail journey offers another pleasant glimpse of India's changing landscapes. Upon arrival at Thrissur Railway Station, you will be transferred to Arattupuzha. Check into Neelambari, a beautiful and peaceful retreat inspired by traditional Keralan architecture, set against a quiet rural backdrop. In the late afternoon, stretch your legs with a gentle village walk through peaceful lanes and green paddy fields. Cap off the day with a serene canoe ride along the local, palm-fringed waterways—a perfect, quiet reflection of your family’s grand Keralan adventure.</p>
+            <div class="overnight">Overnight in Arattupuzha.</div>
+            
+            <div class="day-images-gallery">
+                <img src="IMAGE_LINK_1_HERE" alt="Thrissur Arrival">
+                <img src="IMAGE_LINK_2_HERE" alt="Arattupuzha Views">
+            </div>
+        </div>
+
+        <div class="day-block">
+            <h3 class="day-title"><span>Day 15</span> 07 January 2027 | Arattupuzha – Cochin International Airport</h3>
+            <p class="day-desc">Enjoy your final Keralan breakfast surrounded by the tranquility of Arattupuzha. Depending on your flight schedule, check out of your retreat and begin the drive to Cochin International Airport. This final journey offers a lasting glimpse of Kerala’s everyday village landscapes and coconut groves. Proceed with your departure formalities, carrying home unforgettable memories of nature, wildlife, and family bonding from the beautiful south of India. Have a safe flight back to Switzerland!</p>
+            
+            <div class="day-images-gallery">
+                <img src="IMAGE_LINK_1_HERE" alt="Departure Journey">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Proposed Accommodations</h2>
+        <table class="hotel-table">
+            <thead>
+                <tr>
+                    <th>Destination</th>
+                    <th>Hotel / Resort</th>
+                    <th>Room Category</th>
+                    <th>Nights</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Cochin</td>
+                    <td><a href="https://www.cghearth.com/brunton-boatyard" target="_blank">Brunton Boatyard</a></td>
+                    <td>01 Double + 01 Twin Sea Facing Room</td>
+                    <td>02</td>
+                </tr>
+                <tr>
+                    <td>Munnar</td>
+                    <td><a href="https://lockhartbungalow.com/" target="_blank">Lockhart Bungalow</a></td>
+                    <td>01 Double + 01 Twin Room Bungalow Buyout</td>
+                    <td>02</td>
+                </tr>
+                <tr>
+                    <td>Periyar</td>
+                    <td><a href="https://www.cghearth.com/spice-village" target="_blank">Spice Village</a></td>
+                    <td>01 Double + 01 Twin Spice Garden Cottage</td>
+                    <td>02</td>
+                </tr>
+                <tr>
+                    <td>Kumarakom</td>
+                    <td><a href="https://www.cghearth.com/coconut-lagoon" target="_blank">Coconut Lagoon</a></td>
+                    <td>01 Double + 01 Twin Heritage Bungalow</td>
+                    <td>02</td>
+                </tr>
+                <tr>
+                    <td>Alleppey</td>
+                    <td><a href="https://www.cghearth.com/spice-coast-cruises" target="_blank">Spice Coast Cruises</a></td>
+                    <td>02-Bedroom Private Houseboat</td>
+                    <td>01</td>
+                </tr>
+                <!-- Option A Row -->
+                <tr style="background-color: #fdfaf6;">
+                    <td><strong>Option A:</strong> Mararikulam</td>
+                    <td><a href="https://www.cghearth.com/marari-beach" target="_blank">Marari Beach Resort</a></td>
+                    <td>01 Double + 01 Twin Garden Villa</td>
+                    <td>05</td>
+                </tr>
+                <!-- Option B Rows -->
+                <tr style="background-color: #f9f9f9;">
+                    <td><strong>Option B:</strong> Wayanad</td>
+                    <td><a href="https://www.tranquilresort.com/" target="_blank">Tranquil Resort</a></td>
+                    <td>01 Double + 01 Twin Garden Room</td>
+                    <td>04</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td><strong>Option B:</strong> Arattupuzha</td>
+                    <td><a href="https://neelambari.co.in/" target="_blank">Neelambari Ecotourism</a></td>
+                    <td>01 Double + 01 Twin Boutique Room</td>
+                    <td>01</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="price-section">
+        <div class="price-box">
+            <div>
+                <h3 style="margin-top:0;">Total Package Cost (Option A)</h3>
+                <div class="price-amount">€ 4,565</div>
+            </div>
+            <div>
+                <h3 style="margin-top:0;">Total Package Cost (Option B)</h3>
+                <div class="price-amount">€ 4,158</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>The Tour Price Includes</h2>
+        <ul class="content-list">
+            <li><strong>Accommodation:</strong> 13 nights of accommodation in carefully selected high-end luxury Double/Twin rooms, including daily breakfast, plus 1 memorable night aboard a private traditional houseboat.</li>
+            <li><strong>Transportation:</strong> All airport transfers, inter-city journeys, and sightseeing as per the itinerary, provided in a private, air-conditioned vehicle with a professional chauffeur. All vehicle-related expenses (fuel, tolls, parking fees, interstate taxes, and driver allowances) are covered.</li>
+            <li><strong>Monument Entries:</strong> Entrance fees to all monuments and sites included in the program.</li>
+            <li><strong>Local Guides:</strong> Services of an experienced, French-speaking local guide during the sightseeing tour in Kochi.</li>
+            <li><strong>Cultural Experiences:</strong>
+                <ul class="sub-list">
+                    <li>Premium seating for a traditional Kathakali performance in Cochin.</li>
+                    <li>Thrilling Kalaripayattu martial arts demonstration in Periyar.</li>
+                    <li>Guided village walk in Arattupuzha.</li>
+                </ul>
+            </li>
+            <li><strong>Nature & Wildlife Activities:</strong>
+                <ul class="sub-list">
+                    <li>Guided Jeep safari through a scenic tea plantation in Munnar.</li>
+                    <li>Peaceful boat ride on Periyar Lake.</li>
+                    <li>Guided visit to the lush spice plantations in Periyar.</li>
+                    <li>Exciting Jeep safari in Muthanga Wildlife Sanctuary, Wayanad.</li>
+                    <li>Thrilling Jeep safari in Tholpetty Wildlife Sanctuary, Wayanad.</li>
+                </ul>
+            </li>
+            <li><strong>Assistance & Taxes:</strong> Personalized meet-and-assist service upon arrival, and all currently applicable government taxes.</li>
+        </ul>
+
+        <h2>The Tour Price Does Not Include</h2>
+        <ul class="content-list">
+            <li><strong>International Flights:</strong> Domestic and international air tickets. (As airfares are dynamic, they are always quoted separately. We will provide the best available fare at the time of booking).</li>
+            <li><strong>Airline Supplements:</strong> Seat selection charges or specific airline supplements, which may involve an additional cost at the time of booking.</li>
+            <li><strong>Visa & Insurance:</strong> Indian visa fees and comprehensive travel/health insurance, unless otherwise specified.</li>
+            <li><strong>Additional Meals & Beverages:</strong> Any additional lunches or dinners not specified in the itinerary, as well as all beverages.</li>
+            <li><strong>Personal Expenses:</strong> Laundry, telephone charges, tips/gratuities to hotel staff, drivers and guides, personal clothing, and other items of a personal nature.</li>
+            <li><strong>Check-in/Check-out Flexibility:</strong> Standard hotel check-in time is 14:00 and check-out time is 11:00. For the houseboat, check-in is at 12:30 and check-out is at 09:00. Early check-in and late check-out are strictly subject to availability and may incur additional charges.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>General Terms & Conditions</h2>
+        <ul class="content-list">
+            <li><strong>Payment Terms:</strong>
+                <ul class="sub-list">
+                    <li>A deposit of 30% of the total tour amount is required at the time of registration to confirm the booking.</li>
+                    <li>The remaining balance must be paid in full 60 days prior to your arrival.</li>
+                    <li><em>Note: Any international bank transfer charges, where applicable, must be borne by the sender. The full net amount stated on the invoice must be received by Mathew Voyages.</em></li>
+                </ul>
+            </li>
+            <li><strong>Cancellation Policy:</strong>
+                <ul class="sub-list">
+                    <li>60 to 46 days before arrival: 30% of the total tour price will be charged.</li>
+                    <li>45 to 31 days before arrival: 50% of the total tour price will be charged.</li>
+                    <li>30 to 15 days before arrival: 75% of the total tour price will be charged.</li>
+                    <li>14 days or less before arrival: 100% of the total tour price will be charged.</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    
+    <section>
+        <h2>Travel Formalities & Important Information</h2>
+        <ul class="content-list">
+            <li><strong>Visa & Passport Requirements (For Swiss & EU Nationals):</strong> Your passport must remain valid for at least 6 months beyond your intended return date and should contain at least 3 blank pages (including 2 facing pages). You are eligible for an e-Tourist Visa (maximum stay of 30 days; single-entry or multiple-entry options available). We recommend applying well in advance.</li>
+            <li><strong>Health & Medical Precautions:</strong> No specific vaccinations are compulsory for travel to India; however, it is highly recommended that you consult your doctor to ensure that your routine vaccinations are up to date. If you are undergoing specific medical treatments, please carry a prescription translated into English. Ensure you carry sufficient medication for the entire duration of your journey in your hand luggage.</li>
+            <li><strong>Taxes & Price Adjustments:</strong> Our rates include all currently applicable taxes. However, any unforeseen changes imposed by the authorities before your arrival—including fuel surcharges, entrance fees, service taxes, or other statutory charges—may be reflected in an adjustment to the final tour price.</li>
+            <li><strong>Unforeseen Circumstances:</strong> While every effort is made to ensure a smooth and trouble-free journey, unforeseen circumstances such as political situations, adverse weather conditions, or other events beyond our control may occasionally affect certain services. We kindly request your understanding should such circumstances arise.</li>
+        </ul>
+    </section>
+
+    <div class="personal-touch">
+        "Dear Michael & Family, we have meticulously crafted this itinerary with the utmost care, keeping the comfort of your children and the joy of a slow-paced holiday in mind. We want you to experience the true essence and luxury of Kerala without any rush. We eagerly look forward to welcoming you and ensuring your holiday is flawless and deeply memorable."
+    </div>
+
+    <footer>
+        <strong>Mathew Voyages</strong>
+        contact@mathewvoyages.com &nbsp;|&nbsp; +91 92495 33708<br>
+        Mathew Voyages &nbsp;|&nbsp; L'Inde avec Mathew
+    </footer>
+</div>
+
+</body>
+</html>
